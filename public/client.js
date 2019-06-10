@@ -1,8 +1,10 @@
 // Triggers
+let herokuServerURL = "https://dnd-character-sheet-node.herokuapp.com";
+
 function getPreviousEntries(userId) {
     $.ajax({
             type: 'GET',
-            url: `/get-all-entries/${userId}`,
+            url: `${herokuServerURL}/get-all-entries/${userId}`,
             dataType: 'json',
             contentType: 'application/json'
         })
@@ -41,7 +43,7 @@ function checkInputByValue(result, fieldName, expectedValue) {
 function prePopulateFormBasedOnEntryID(selectedEntryID) {
     $.ajax({
             type: 'GET',
-            url: `/get-entry-by-id/${selectedEntryID}`,
+            url: `${herokuServerURL}/get-entry-by-id/${selectedEntryID}`,
             dataType: 'json',
             contentType: 'application/json'
         })
@@ -159,7 +161,7 @@ $('#login').on('click', function (event) {
         console.log(loginObject);
         $.ajax({
                 type: 'POST',
-                url: '/signin',
+                url: `${herokuServerURL}/signin`,
                 dataType: 'json',
                 data: JSON.stringify(loginObject),
                 contentType: 'application/json'
@@ -202,7 +204,7 @@ $('#register').on('click', function (event) {
         };
         $.ajax({
                 type: 'POST',
-                url: '/users/create',
+                url: `${herokuServerURL}/users/create`,
                 dataType: 'json',
                 data: JSON.stringify(newUserObject),
                 contentType: 'application/json'
@@ -234,7 +236,7 @@ $(document).on('click', '.character-name-button', function (event) {
 
     $.ajax({
             type: 'GET',
-            url: '/get-entry-by-id/' + characterNameValue,
+            url: `${herokuServerURL}/get-entry-by-id/${characterNameValue}`,
             dataType: 'json',
             contentType: 'application/json'
         })
@@ -292,7 +294,7 @@ $('#form-delete-button').on('click', function (event) {
     const selectedEntryID = $('.selected-entry-id').val();
     $.ajax({
             type: 'DELETE',
-            url: `/delete-entry/${selectedEntryID}`,
+            url: `${herokuServerURL}/delete-entry/${selectedEntryID}`,
             dataType: 'json',
             contentType: 'application/json'
         })
@@ -439,7 +441,7 @@ $('#form-submit-button').on('click', function (event) {
         if (selectedEntryID == "") {
             $.ajax({
                     type: 'POST',
-                    url: '/form/create',
+                    url: `${herokuServerURL}/form/create`,
                     dataType: 'json',
                     data: JSON.stringify(generalInformationObject),
                     contentType: 'application/json'
@@ -495,7 +497,7 @@ $('#form-submit-button').on('click', function (event) {
             console.log("inside put", selectedEntryID);
             $.ajax({
                     type: 'PUT',
-                    url: '/form/update/' + selectedEntryID,
+                    url: `${herokuServerURL}/form/update/${selectedEntryID}`,
                     dataType: 'json',
                     data: JSON.stringify(generalInformationObject),
                     contentType: 'application/json'
