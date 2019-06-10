@@ -144,7 +144,7 @@ $(document).on('click', '.legend-hide', function (event) {
     $(this).parent().parent().find(".section-content").hide();
 });
 
-$('#login').on('click', function (event) {
+$(document).on('click', '#login', function (event) {
     event.preventDefault();
     const loginUsername = $('.loginUsername').val();
     const loginPassword = $('.loginPassword').val();
@@ -185,7 +185,7 @@ $('#login').on('click', function (event) {
     }
 });
 
-$('#register').on('click', function (event) {
+$(document).on('click', '#register', function (event) {
     event.preventDefault();
     const username = $('.registerUsername').val();
     const password = $('.registerPassword').val();
@@ -288,7 +288,7 @@ $(document).on('click', '.character-name-button', function (event) {
 
 ////////////////////////////////////////////////
 
-$('#form-delete-button').on('click', function (event) {
+$(document).on('click', '#form-delete-button', function (event) {
     event.preventDefault();
     const loggedInUser = $('.logged-in-user').val();
     const selectedEntryID = $('.selected-entry-id').val();
@@ -350,7 +350,7 @@ $('#form-delete-button').on('click', function (event) {
 });
 
 //General Information time of discharge returning undefined UNFINISHED
-$('#form-submit-button').on('click', function (event) {
+$(document).on('click', '#form-submit-button', function (event) {
     event.preventDefault();
     const loggedInUser = $('.logged-in-user').val();
     const selectedEntryID = $('.selected-entry-id').val();
@@ -552,13 +552,13 @@ $('#form-submit-button').on('click', function (event) {
 
 });
 
-$('#sign-up-link').on('click', function (event) {
+$(document).on('click', '#sign-up-link', function (event) {
     event.preventDefault();
     $('#login-form-section').addClass('hidden');
     $('#sign-up-form').removeClass('hidden');
 });
 
-$('#sign-in-link').on('click', function (event) {
+$(document).on('click', '#sign-in-link', function (event) {
     event.preventDefault();
     $('#sign-up-form').addClass('hidden');
     $('#login-form-section').removeClass('hidden');
@@ -571,7 +571,7 @@ var d20 = {
     }
 }
 
-$("#d20").on("click", function () {
+$(document).on("click", "#d20", function () {
     d20.dice.value = 1 + Math.floor(Math.random() * 20);
     $("#d20-value").empty();
     $("#d20-value").append("You rolled: " + d20.dice.value + " ");
@@ -585,7 +585,7 @@ var d12 = {
     }
 }
 
-$("#d12").on("click", function () {
+$(document).on("click", "#d12", function () {
     d12.dice.value = 1 + Math.floor(Math.random() * 12);
     $("#d12-value").empty();
     $("#d12-value").append("You rolled: " + d12.dice.value + " ");
@@ -598,7 +598,7 @@ var d10 = {
     }
 }
 
-$("#d10").on("click", function () {
+$(document).on("click", "#d10", function () {
     d10.dice.value = 1 + Math.floor(Math.random() * 10);
     $("#d10-value").empty();
     $("#d10-value").append("You rolled: " + d10.dice.value + " ");
@@ -611,7 +611,7 @@ var d8 = {
     }
 }
 
-$("#d8").on("click", function () {
+$(document).on("click", "#d8", function () {
     d8.dice.value = 1 + Math.floor(Math.random() * 8);
     $("#d8-value").empty();
     $("#d8-value").append("You rolled: " + d8.dice.value + " ");
@@ -624,7 +624,7 @@ var d6 = {
     }
 }
 
-$("#d6").on("click", function () {
+$(document).on("click", "#d6", function () {
     d6.dice.value = 1 + Math.floor(Math.random() * 6);
     $("#d6-value").empty();
     $("#d6-value").append("You rolled: " + d6.dice.value + " ");
@@ -637,13 +637,13 @@ var d4 = {
     }
 }
 
-$("#d4").on("click", function () {
+$(document).on("click", "#d4", function () {
     d4.dice.value = 1 + Math.floor(Math.random() * 4);
     $("#d4-value").empty();
     $("#d4-value").append("You rolled: " + d4.dice.value + " ");
 });
 
-$("#reset").on("click", function () {
+$(document).on("click", "#reset", function () {
     $("#d4-value").empty();
     $("#d6-value").empty();
     $("#d8-value").empty();
@@ -651,9 +651,4 @@ $("#reset").on("click", function () {
     $("#d12-value").empty();
     $("#d20-value").empty();
 });
-//let htmlImageOutput = "<img src='images/dice/dice-" + diceNumber + ".png' class='dice-image'>";
 
-//form trigger
-$(document).submit('form', function (event) {
-    event.preventDefault();
-});
