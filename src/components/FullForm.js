@@ -1,8 +1,10 @@
 import React from 'react';
+import CharacterName from './full-form-subcomponents/CharacterName';
 //
 function FullForm() {
     return (
             <main role="main" id="full-form" className="hidden">
+            <CharacterName />
                 <section role="region" className="character-name page-wrapper">
                     <fieldset>
                         <section role="region" className="select-previous-entries">
