@@ -39,7 +39,7 @@ function CharacterInformationForm() {
                                 </div>
                                 <div className="input-wrapper">
                                     <label htmlFor="characterRace">Race</label>
-                                    <input className="characterRace" name="characterRace" type="text" placeholder="Race" className="" required />
+                                    <input className="characterRace" name="characterRace" type="text" placeholder="Race" required />
                                     <div className="icons-wrapper">
                                         <div className="icon-content icon-content-info">
                                             <i className="fas fa-info"></i>
